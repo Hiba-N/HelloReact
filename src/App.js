@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Navbar from "./Navbar";
+import Signup from "./Signup";
+import About from "./About";
+import "./styles.css";
+import MapComponent from "./Map"; // Ensure the file name matches
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let component;
+    switch (window.location.pathname) {
+        default:
+            component = <MapComponent />;
+            break;
+        case "/signup":
+            component = <Signup />;
+            break;
+        case "/about":
+            component = <About />;
+            break;
+    }
+    return (
+        <>
+            <Navbar />
+            <div className="container">{component}</div>
+        </>
+    );
 }
 
 export default App;
