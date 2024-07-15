@@ -1,6 +1,19 @@
 import React from 'react';
-import { MapContainer, TileLayer, Marker} from 'react-leaflet';
+import { MapContainer, TileLayer, Polygon} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+
+const multiPolygon = [
+    [
+      [33.70, 72.97],
+      [33.70, 72.95],
+      [33.71, 72.95],
+    ],
+    [
+    [33.712, 72.97],
+    [33.714, 72.95],
+    [33.72, 72.95],
+    ],
+  ]
 
 const MapComponent = () => {
     return (
@@ -9,8 +22,9 @@ const MapComponent = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Marker position={[51.505, -0.09]}>
-        </Marker>
+        {/* <Marker position={[51.505, -0.09]}>
+        </Marker> */}
+        <Polygon positions={multiPolygon} />
       </MapContainer>
     );
   }

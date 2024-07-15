@@ -1,0 +1,23 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-0.09, 51.505],
+                        [-0.08, 51.505],
+                        [-0.08, 51.506],
+                        [-0.09, 51.506],
+                        [-0.09, 51.505]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "My Polygon"
+            }
+        }
+    ]
+}
